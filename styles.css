@@ -1,0 +1,18 @@
+.jumbotron{
+    
+    color: gold;
+    text-align: center;
+    background-image: url(https://image.shutterstock.com/image-vector/silhouettes-two-young-women-talking-260nw-154241015.jpg); background-size: 100%;
+    
+    
+}
+
+.display-4 {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.lead{
+    font-size: 50px;
+}
+
