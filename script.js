@@ -1,21 +1,44 @@
-const openModal = document.querySelectorAll('open-model');
-const closeModal = document.querySelectorAll('close-model');
-const overlay = document.querySelectorAll('overlay');
+const openModalButton = document.querySelectorAll('[data-modal-target]');
+const closeModalButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
 
-openModel.forEach(button => {
+openModalButton.forEach(button => {
 button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+
 
 });
 });
 
-function Open(modal) {
-    if(modal === null) return
+overlay.addEventListener('click',() => {
+        const modals = document.querySelectorAll('.modal.active')
+        modals.forEach(modal => {
+            closeModal(modal)
+        })
+        
+    
+    
+    });
+    
+
+closeModalButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    
+    
+    });
+    });
+
+function openModal(modal) {
+    if(modal == null) return
     modal.classList.add('active')
     overlay.classList.add('active')
 }
 
-function Close(modal) {
-    if(modal === null) return
+function closeModal(modal) {
+    if(modal == null) return
     modal.classList.remove('active');
     overlay.classList.remove('active');
 }

@@ -1,31 +1,40 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>LAF(Loan a Friend)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  
+  <link href="styles.css" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
-<body>
-    <div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid">
         
-        <div class="container">
-          <h1 class="display-4">Loan a Friend</h1>
-          <p class="lead">Get your Stuff Back</p>
-        </div>
-      </div>
-      <h2> Friend List</h2>
-      <button data-modal-target="#modal">Add Friend</button>
-      <div class="modal" id="modal">
-          <div class="modal-header">
-              <div class="title">Add</div>
-              <button data-close-button class="close-button">&times;</button>
-          </div>
-          <div class="modal-body">
-              
-          </div>
-      </div>
+    <div class="container">
+      <h1 class="display-4">Loan a Friend</h1>
+      <p class="lead">Get your Stuff Back</p>
+    </div>
+  </div>
+<body>
+  <button data-modal-target="#modal">Add Friend</button>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Friend</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
+    
+    
+      <input class="form-control" id="date" name="date" placeholder="date" type="text" required />
+      <input class="form-control" id="item" name="item" placeholder="item" type="text" required />
+      <button class="add-friend">Add Friend</button>
+    </div>
+</div>
+    </div>
+  </div>
+  <div id="overlay"></div>
 </body>
-<script src="script.js"></script>
 </html>
