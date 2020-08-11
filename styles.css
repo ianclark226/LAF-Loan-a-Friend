@@ -113,3 +113,20 @@ h2 {
     color: white;
   }
 
+  .friends {
+    perspective: 1000px;
+    position: relative;
+    height: 300px;
+    width: 500px;
+    max-width: 100%;
+}
+
+.inner-friend {
+  box-shadow: 0, 1px 10px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
