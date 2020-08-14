@@ -8,6 +8,7 @@ const addFriendBtn = document.getElementById('add-friend');
 const friendsContainer = document.getElementById('friends-container');
 
 
+
 openModalButton.forEach(button => {
 button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget)
@@ -64,23 +65,71 @@ function createFriends() {
 
 //create a single friend in the dom
 
-function createFriend(data) {
-    const friend = document.createElement('div');
+  function createFriend(data) {
+    // append HTML to DOM
+    const friend = document.createElement('ul');
     friend.classList.add('friend');
-
+    
     friend.innerHTML = `
-    <div class="inner-friend">
-    <p>
-    ${data.name}${data.date}${data.item}
-    </p>
-    </div>
-    `;
+    <div id="inner-friend" class="inner-friend">
+    <ul>
+      <li>${data.name}</li>
+      <li>${data.date}</li>
+      <li>${data.item}</li>
+      </ul>
+    </div>`;
 
     //add friends to dom
-    friendsEl.push(friend);
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
+    
+    friendsEl.push(friend);
+  friend.appendChild(deleteBtn);
     friendsContainer.appendChild(friend);
-}
+    
+   
+  }
+
+  // When a element inside of the todoList is clicked...
+friendsContainer.addEventListener("click", function(event) {
+    const element = event.target;
+  
+    // If that element is a button...
+    if (element.matches("button") === true) {
+      // Get its data-index value and remove the todo element from the list
+     element.parentNode.remove(element);
+     
+        
+    
+     
+     
+    }
+});
+   
+
+    
+  
+    
+    
+    // bindEvents();
+    //  const deleteBtn = document.getElementById("delete");
+    //  console.log("here");
+    //  if (deleteBtn) {
+    //    deleteBtn.addEventListener("click", false);
+    //    const elem = document.getElementById("inner-friend");
+       
+    //    elem.parentNode.removeChild(elem);
+
+    //    return false;
+    //  }
+//     deleteBtn.addEventListener('click', () => {
+    
+    
+//   });
+    
+
+
 
 // get friends from localstorage
 function getFriendsData() {
@@ -96,7 +145,12 @@ function setFriendsData(friends) {
     window.location.reload();
 }
 
+
+
 createFriends();
+
+//remove friend from local storage
+
 
 // add new friend
 addFriendBtn.addEventListener('click', () => {
@@ -116,6 +170,17 @@ addFriendBtn.addEventListener('click', () => {
 
         FriendsData.push(newFriend);
         setFriendsData(FriendsData);
-        c
+        
     }
 });
+
+// deleteBtn.addEventListener('click', () => {
+//     const elem = document.getElementById('inner-friend');
+//     console.log('here');
+//     elem.parentNode.removeChild(elem);
+    
+//     return false;
+// }
+// );
+
+    

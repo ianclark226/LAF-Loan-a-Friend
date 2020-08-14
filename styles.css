@@ -117,7 +117,7 @@ h2 {
     perspective: 1000px;
     position: relative;
     height: 300px;
-    width: 500px;
+    width: 1000px;
     max-width: 100%;
 }
 
@@ -126,7 +126,16 @@ h2 {
   border-radius: 4px;
   height: 100%;
   width: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease;
+  
+
 }
+
+ #friends-container .friend {
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+  margin: 20px;
+  
+}
+
+
